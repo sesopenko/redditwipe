@@ -10,8 +10,7 @@ import datetime
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     load_dotenv();
-    reddit_client_username = os.getenv('REDDIT_CLIENT_USERNAME')
-    print('running as username:', reddit_client_username)
+    # todo: validate config options
     reddit = praw.Reddit(
         client_id=os.getenv('REDDIT_CLIENT_ID', ""),
         client_secret=os.getenv("REDDIT_CLIENT_SECRET", ""),
@@ -22,16 +21,16 @@ if __name__ == '__main__':
     )
     comment_delete_days = int(os.getenv('COMMENT_DELETE_DAYS', "7"))
     expiry = datetime.datetime.now() - datetime.timedelta(days=comment_delete_days)
-    readonly_mode = os.getenv("READONLY", "True").lower() == "true"
-
+    readonly_mode = not (os.getenv("READONLY", "False").lower() == "false")
 
     for comment in reddit.user.me().comments.new():
-
         comment_datetime = datetime.datetime.fromtimestamp(comment.created_utc)
         is_expired = comment_datetime > expiry
         print('is_expired', is_expired)
         if not readonly_mode:
             print(comment_datetime)
             print('will delete')
-            #comment.delete()
+            comment.delete()
+            print('deleted')
+    # todo: run forever
 
