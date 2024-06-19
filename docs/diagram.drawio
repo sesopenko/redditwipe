@@ -1,0 +1,138 @@
+<mxfile host="drawio-plugin" modified="2024-06-15T23:02:29.716Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="uEIPKr0xpB_eMOl-T2H0" version="22.1.22" type="embed">
+  <diagram id="23iRSUPoRavnBvh4doch" name="diagram">
+    <mxGraphModel dx="2195" dy="928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="170" width="310" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="upgrades" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="8">
+          <mxGeometry x="90" y="270" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="versioning pickle file" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="8">
+          <mxGeometry x="10" y="260" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5" value="installation" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="8">
+          <mxGeometry x="180" y="270" width="70" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="76" value="&lt;h1&gt;Versioning&lt;/h1&gt;&lt;p&gt;installation is run on first execution. It runs the installation sql to set up tables, then saves versioning to latest version&lt;br&gt;&lt;br&gt;when upgrading, reads versioning pickle for most recent version, then runs any upgrades which haven&#39;t been ran.&amp;nbsp; Then updates most recent version&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="8">
+          <mxGeometry x="20" y="10" width="270" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="15" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="10" y="148" width="340" height="392" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="post cache" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+          <mxGeometry x="10" y="162" width="180" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry y="30" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="full path url" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry y="60" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="14" value="created unix timestamp" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry y="90" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="49" value="subreddit" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry y="120" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="50" value="is_deleted" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry y="150" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="32" value="get stop point&lt;br&gt;&lt;br&gt;select most recent" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+          <mxGeometry x="160" y="42" width="160" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="16" value="Post Cache" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="15">
+          <mxGeometry x="125" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="58" value="flag comment deleted" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+          <mxGeometry x="200" y="312" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="77" value="cache comment" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+          <mxGeometry x="205" y="192" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="25" y="560" width="300" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="38" value="walk from most recent" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="37">
+          <mxGeometry x="10" y="170" width="140" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="39" value="is_subreddit_excluded" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="37">
+          <mxGeometry x="10" y="84" width="140" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="47" value="is to be deleted" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="37">
+          <mxGeometry x="10" y="130" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="35" value="post walker" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="37">
+          <mxGeometry x="110" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="59" value="delete comment" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="37">
+          <mxGeometry x="165" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="43" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="520" width="200" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="41" value="excluded subreddits" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="43">
+          <mxGeometry x="25" y="50" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="44" value="env variables" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="43">
+          <mxGeometry x="40" y="10" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="46" value="comment delete days" style="shape=document;whiteSpace=wrap;html=1;boundedLbl=1;" vertex="1" parent="43">
+          <mxGeometry x="30" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="39" target="41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-210" y="700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-40" y="700" />
+              <mxPoint x="-40" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="51" value="state sqlite3" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="350" y="40" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.429;exitY=-0.005;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="11" target="51">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="128" as="sourcePoint" />
+            <mxPoint x="320" y="60" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="97" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.532;entryY=1.026;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="59" target="58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.979;entryY=0.552;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="38" target="68">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-50" y="751" />
+              <mxPoint x="-50" y="884" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="71" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="-310" y="810" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="68" value="user comments (latest)" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="71">
+          <mxGeometry x="110" y="30" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="73" value="delete comment" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="71">
+          <mxGeometry x="40" y="120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="72" value="reddit apis" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="808" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="59" target="73">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
