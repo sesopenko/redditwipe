@@ -8,5 +8,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY main.py ./
+COPY redditwipe ./redditwipe
 
 CMD [ "python", "./main.py" ]
