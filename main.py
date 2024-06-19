@@ -25,9 +25,13 @@ if __name__ == '__main__':
     comment_delete_days = os.getenv('COMMENT_DELETE_DAYS', "")
     comment_delete_minutes = os.getenv('COMMENT_DELETE_MINUTES', "")
     if comment_delete_days != "":
+        # do this maximum once per day, since we're tracking by days
+        minimum_time_seconds: int = 86400
         comment_delete_minutes = int(comment_delete_days) * 60 * 24
     else:
         if comment_delete_minutes != "":
+            # do this once per 10 minutes the typical rate limit sleep period
+            minimum_time_seconds: int = 10 * 60
             comment_delete_minutes = int(comment_delete_minutes)
         else:
             raise Exception("Missing COMMENT_DELETE_DAYS or COMMENT_DELETE_MINUTES")
@@ -47,12 +51,8 @@ if __name__ == '__main__':
         finished: datetime = datetime.now()
         duration = finished - walk_start
         total_minutes = duration.total_seconds() / 60
-        minimum_time: int = 60 * 10
-        if total_minutes < minimum_time:
-            sleep_time = minimum_time - total_minutes
+
+        if total_minutes < minimum_time_seconds:
+            sleep_time = minimum_time_seconds - total_minutes
             print(f'sleeping for {sleep_time} seconds')
             sleep(sleep_time)
-
-
-    # todo: run forever
-
