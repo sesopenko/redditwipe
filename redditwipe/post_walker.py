@@ -8,7 +8,7 @@ class PostWalker(object):
 
     _now: datetime = None
     def __init__(self, excluded_subreddits: list[str], expiry_minutes: int = 86400) -> None:
-        self._excluded_subreddits = excluded_subreddits
+        self._excluded_subreddits = [s.strip() for s in excluded_subreddits]
         self._expiry_minutes = expiry_minutes
         pass
 
@@ -16,7 +16,7 @@ class PostWalker(object):
         return subreddit_name in self._excluded_subreddits
 
     def should_delete_comment(self, comment: Comment) -> bool:
-        if comment.subreddit.display_name in self._excluded_subreddits:
+        if comment.subreddit.display_name.strip() in self._excluded_subreddits:
             return False
         now: datetime = self._get_now()
         expiry_time: datetime = now - timedelta(minutes=self._expiry_minutes)
